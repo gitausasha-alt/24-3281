@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports Cars Showcase</title>
+  <style>
+    /* --- Global Styles --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+      transition: background 0.3s;
+    }
+
+    /* ✅ Responsive Design */
+    @media (max-width: 600px) {
+      body {
+        background: lightblue;
+      }
+    }
+
+    /* ✅ Style all <h1> headers */
+    h1 {
+      color: red;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: linear-gradient(90deg, #b30000, #660000);
+      padding: 40px 20px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #ddd;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background: yellow;
+      text-align: center;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3333;
+    }
+
+    /* --- Main Content --- */
+    main {
+      padding: 30px 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      border-left: 6px solid #b30000;
+      padding-left: 10px;
+    }
+
+    /* ✅ Highlight Class */
+    .highlight {
+      font-weight: bold;
+      background: yellow;
+      font-size: 20px;
+      color: #000;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    /* ✅ Box Model Practice */
+    .box {
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid black;
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    /* --- Image --- */
+    img {
+      display: block;
+      margin: 25px auto;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    /* --- Table --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #1a1a1a;
+      border: 2px solid #b30000;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #ff4d4d;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border: 1px solid #b30000;
+    }
+
+    th {
+      background: #b30000;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background: #262626;
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 700px;
+      height: 400px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+    }
+
+    /* ✅ Background Image on .banner */
+    .banner {
+      background: url('https://cdn.pixabay.com/photo/2017/01/06/19/15/car-1957037_1280.jpg') no-repeat center center;
+      background-size: cover;
+      height: 250px;
+      margin: 30px 0;
+      border-radius: 15px;
+    }
+
+    /* ✅ Transition Button */
+    .transition-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: blue;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background 0.5s;
+    }
+
+    .transition-btn:hover {
+      background: green;
+    }
+
+    /* ✅ Absolute vs Relative Positioning */
+    .relative-box {
+      position: relative;
+      background: #222;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #b30000;
+      padding: 10px;
+      color: #fff;
+    }
+
+    /* ✅ Grid Layout */
+    .grid-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-item {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #b30000;
+    }
+
+    /* ✅ Paragraph with em unit */
+    p {
+      font-size: 1.2em;
+    }
+
+    /* ✅ Color Formats */
+    .rgb-text { color: rgb(255,0,0); }
+    .hex-text { color: #00ff00; }
+    .hsl-text { color: hsl(240, 100%, 50%); }
+
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    footer a {
+      color: #ff3333;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sports Cars World</h1>
+    <p>The ultimate destination for speed, style, and performance.</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Models</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>Welcome to Sports Cars World</h2>
+      <p class="highlight">We bring you the finest selection of high-performance sports cars from around the globe.</p>
+ 
+<img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Red Sports Car" />
+
+<img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" alt="Yellow Lamborghini" />
+
+<img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg" alt="Blue Porsche" />
+
+<img src="https://images.pexels.com/photos/1397604/pexels-photo-1397604.jpeg" alt="Black Ferrari" />
+
+    </section>
+
+    <!-- ✅ Box Model Example -->
+    <div class="box">
+      <h2>Box Model Practice</h2>
+      <p>This section demonstrates margin, padding, and border properties.</p>
+    </div>
+
+    <!-- ✅ Banner with background image -->
+    <div class="banner"></div>
+
+    <!-- ✅ Transition Button -->
+    <button class="transition-btn">Hover Me</button>
+
+    <!-- ✅ Positioning Example -->
+    <div class="relative-box">
+      This is a relative container.
+      <div class="absolute-box">I am absolutely positioned!</div>
+    </div>
+
+    <!-- ✅ Grid Layout -->
+    <section class="grid-section">
+      <div class="grid-item">Grid Item 1: Sports car design evolution</div>
+      <div class="grid-item">Grid Item 2: Performance engineering explained</div>
+    </section>
+
+    <!-- ✅ Table -->
+    <section>
+      <h2>Sports Car Comparison</h2>
+      <table>
+        <caption>Top Sports Cars Comparison</caption>
+        <tr>
+          <th>Model</th>
+          <th>Price</th>
+          <th>Rating</th>
+        </tr>
+        <tr>
+          <td>Ferrari F8 Tributo</td>
+          <td>$276,550</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>Mercedes-AMG GT</td>
+          <td>$118,600</td>
+          <td>★★★★☆</td>
+        </tr>
+        <tr>
+          <td>Subaru BRZ STI</td>
+          <td>$35,000</td>
+          <td>★★★☆☆</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- ✅ Video -->
+    <section>
+      <h2>Sports Car Engine Tutorial</h2>
+      <p>This video explains how sports car engines and aerodynamics work.</p>
+<section>
+  <h2>Gallery</h2>
+
+  <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Red Sports Car" />
+
+  <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" alt="Yellow Lamborghini" />
+
+  <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg" alt="Blue Porsche" />
+
+  <img src="https://images.pexels.com/photos/1397604/pexels-photo-1397604.jpeg" alt="Black Ferrari" />
+
+  <h2>Video Showcase</h2>
+
+  <iframe width="560" height="315"
+          src=https://www.youtube.com/embed
+v=Y4DLlC3clPU
+          allowfullscreen>
+  </iframe>
+
+  <iframe width="560" height="315"
+          src=https://www.youtube.com/embed
+v=ba7JNTI17uo
+          allowfullscreen>
+  </iframe>
+</section>
+
+     </section>
+
+    <!-- ✅ Color Formats -->
+    <section>
+      <h2>Color Formats</h2>
+      <p class="rgb-text">This paragraph uses RGB format.</p>
+      <p class="hex-text">This paragraph uses HEX format.</p>
+      <p class="hsl-text">This paragraph uses HSL format.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Contact us: <a href="mailto:info@sportscarsworld.com">info@sportscarsworld.com</a> | Phone: +123 456 7890</p>
+    <p>&copy; 2025 Sports Cars World. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
